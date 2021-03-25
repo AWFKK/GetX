@@ -60,6 +60,19 @@ class ShoppingPage extends StatelessWidget {
                               textColor: Colors.white,
                               child: Text('Add to Cart'),
                             ),
+                            //For CheckButton
+                            Obx(() => IconButton(
+                              icon: controller
+                                  .products[index].isFavorite.value
+                                  ? Icon(Icons.check_box_rounded)
+                                  : Icon(Icons
+                                  .check_box_outline_blank_outlined),
+                              onPressed: () {
+                                //.toggetl on work for bool
+                                controller.products[index].isFavorite
+                                    .toggle();
+                              },
+                            ))
                           ],
                         ),
                       ),
@@ -68,18 +81,32 @@ class ShoppingPage extends StatelessWidget {
                 },
               ),
             ),
-            GetX<CartController>(
+           //Using GetBuilder
+           /*GetBuilder<CartController>
+             (builder: (controller){
+             return Text('Total Amount: \$ ${controller.testAmount}',
+               style: TextStyle(fontSize: 32, color: Colors.white),
+             );
+           },),*/
+           //Using Getx
+           /* GetX<CartController>(
               builder: (controller) {
                 return Text('Total Amount: \$ ${controller.totalPrice}',
                   style: TextStyle(fontSize: 32, color: Colors.white),
                 );
               }
-            ),
+            ),*/
+            //Using Obx
+            Obx((){
+              return Text('Total Amount: \$ ${cartController.testAmount}',
+                style: TextStyle(fontSize: 32, color: Colors.white),
+              );
+            }),
             SizedBox(height: 100,),
           ],
         ),
       ),
-      //Cart Count
+      //Cart Count 
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
         backgroundColor: Colors.amber,

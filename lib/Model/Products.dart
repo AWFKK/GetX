@@ -1,4 +1,4 @@
-
+import 'package:get/state_manager.dart';
 
 class Product {
   final int id;
@@ -15,5 +15,5 @@ class Product {
     this.price,
   });
 
-  //final isFavorite = false.obs;
+  final isFavorite = false.obs;
 }
