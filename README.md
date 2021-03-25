@@ -1,6 +1,6 @@
 # GetX
 
-A simple fullter project how to achieve State Manage with GetX(Obx)
+A simple fullter project how to achieve State Manage with GetX, Obx, GetxBuilder
 
 Screenshort,
 
